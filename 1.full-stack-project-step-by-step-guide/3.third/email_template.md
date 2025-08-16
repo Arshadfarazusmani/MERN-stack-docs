@@ -90,3 +90,53 @@ export {
 };
 
 ```
+
+
+# Email Utility with Mailgen and Nodemailer
+
+This code provides utility functions for sending emails in a Node.js application, using **Mailgen** for generating email content and **Nodemailer** for sending emails.
+
+## Explanation
+
+### 1. Dependencies
+
+- **Mailgen:** Generates beautiful HTML and plain text email templates.
+- **Nodemailer:** Sends emails via SMTP.
+
+### 2. sendEmail Function
+
+- Creates a Mailgen instance with a theme and product info.
+- Generates both plain text and HTML email content from the provided `mailgenContent`.
+- Sets up a Nodemailer transporter using SMTP credentials from environment variables.
+- Defines the email details (from, to, subject, text, html).
+- Sends the email and handles errors gracefully.
+
+### 3. emailVerificationMailgenContent Function
+
+- Returns a Mailgen content object for email verification.
+- Includes a welcome message, a verification button, and support info.
+
+### 4. forgotPasswordMailgenContent Function
+
+- Returns a Mailgen content object for password reset.
+- Includes instructions, a reset button, and support info.
+
+### 5. Exports
+
+- Exports the content generators and the sendEmail function for use elsewhere in the application.
+
+## Usage
+
+- Use `emailVerificationMailgenContent` to generate content for verification emails.
+- Use `forgotPasswordMailgenContent` for password reset emails.
+- Use `sendEmail` to send emails with the generated content.
+
+## Benefits
+
+- Centralizes email logic and templates.
+- Makes it easy to send consistent, professional emails.
+- Handles both HTML and plain text formats for better email client compatibility.
+
+---
+
+This utility helps automate and standardize email notifications for user verification and password resets in your
